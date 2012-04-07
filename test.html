@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>jQuery jKlass</title>
+<meta charset="utf-8" />
+</head>
+
+<body>
+
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
+<script type="text/javascript" src="jquery.jklass.js"></script>
+<script type="text/javascript">
+var Class = $.jKlass(null, {
+  init: function() {
+    this.name = 'Test';
+    this.element = '<p/>';
+  },
+  display: function() {
+  
+    $('body').append(this.element).
+    find('p').text(this.name);
+  
+  }
+});
+
+$(function() {
+
+  var myClass = new Class();
+  myClass.display();
+
+});
+</script>
+
+</body>
+</html>
